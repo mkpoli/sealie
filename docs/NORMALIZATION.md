@@ -49,7 +49,7 @@ These frame values are Sealie's own design parameters and are maintained here. T
 
 The official `kSEAL_Rad` classification in [SealSources.txt](https://www.unicode.org/Public/18.0.0/ucd/SealSources.txt) identifies semantic families. Shared geometry is assigned after reviewing a whole component in the same position and structural allograph. Partial radicals, different joins and ambiguous matches remain separate.
 
-The atlas contains **180 templates registered to 3,763 glyphs**. Every registered copy uses **the same component geometry, dimensions and placement**. A template is simplified once and propagated to its instances; copies are not independently smoothed or squeezed. Other forms retain individual drawings.
+The atlas contains **181 templates registered to 3,814 glyphs**. Every registered copy uses **the same component geometry, dimensions and placement**. A template is simplified once and propagated to its instances; copies are not independently smoothed or squeezed. Other forms retain individual drawings.
 
 To propagate an intentional template edit:
 
@@ -76,4 +76,4 @@ The v1.0 [radical expansion](../reports/radical-expansion-v4.json) and [cap refi
 
 笔画间的接触关系按五个笔宽 **23.5、30、36.5、43、49.5 单位**比较，检查新增和丢失的接触，并保护原有半单位留白阈值；敏感路径在必要时保留原形。有效闭合中心线路径中原先存在的字腔，按各字重分别比较。源路径检查、编译后验证及样本视觉审查各有明确范围，记录于[几何报告](../reports/geometric-simplification.json)、[字体验证](../reports/normalized-font-validation.json)及[视觉审查](../reports/geometry-review.json)。
 
-**180 个共享模板用于 3,763 个字形**；每个模板只处理一次，所有登记副本保持相同的形状、尺寸和位置。一般字身沿用 768 单位高度，较矮的基本形式使用各自视觉高度，密集结构可保留较宽尺寸。旧[尺寸报告](../reports/optical-sizing.json)及[视觉审查](../reports/optical-review.json)保留 v1.1 的源文件身份，不代表当前轮廓的重新测量。
+**181 个共享模板用于 3,814 个字形**；每个模板只处理一次，所有登记副本保持相同的形状、尺寸和位置。一般字身沿用 768 单位高度，较矮的基本形式使用各自视觉高度，密集结构可保留较宽尺寸。旧[尺寸报告](../reports/optical-sizing.json)及[视觉审查](../reports/optical-review.json)保留 v1.1 的源文件身份，不代表当前轮廓的重新测量。

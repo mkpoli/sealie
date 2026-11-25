@@ -35,9 +35,9 @@ The THX chart glyphs are not raw scans. The original proposal ([N4688](https://w
 
   | Class | Ink width | Use | Glyphs |
   | --- | --- | --- | --- |
-  | Standard | 520 (x 252…772) | The default | 6,827 |
+  | Standard | 520 (x 252…772) | The default | 6,753 |
   | Narrow | under 520, at the form's natural width | Forms with one main stem or a slender body, such as 木 380 or 弓 320 | 1,696 |
-  | Wide | over 520, up to 640 | Only when 520 cannot hold the structure at rule S4's clearance | 2,805 |
+  | Wide | over 520, up to 640 | Only when 520 cannot hold the structure at rule S4's clearance | 2,879 |
 
   A glyph is never widened for emphasis, and never past 640.
 - **F4. Short forms.** A closed list of 51 basic characters is drawn shorter than the body, each at a registered size and centred on y = 320: for example 一 30×470 (height × width), 二 440×430, 三 540×430, 工 580×430, 王 620×430, 日 640×360, 田 640×400, 土 680×430, 月 700×430. The full list is `SHORT_FORMS` in the checker. A character is short only if it is on that list; a short component inside a larger character follows rule C4 instead.
@@ -46,9 +46,9 @@ The THX chart glyphs are not raw scans. The original proposal ([N4688](https://w
 
 A character is one of five layouts. The checker finds side-by-side and stacked layouts by looking for a white channel at least 8 units wide that crosses the whole glyph; the shares below are the current font's measured values and are the targets for new or redrawn glyphs.
 
-- **C1. One body.** 6,313 glyphs have no channel that divides them. The whole form fills the frame of F2 and F3.
-- **C2. Side by side** (4,761 glyphs). The left component takes about **41%** of the ink width and the right about **55%** (middle half of the font: 37–46% and 49–58%), with a channel of about **25 units** between them (middle half 18–35). The radical side is the narrower one in four glyphs out of five. Three side-by-side parts divide roughly 34 / 27 / 29%.
-- **C3. Stacked** (1,214 glyphs in two parts, 165 in more). In a two-part stack the upper part is usually the smaller: it takes about **31%** of the height (middle half 27–46%), as a crown such as 艸, 宀 or 竹 does, and the two parts are separated by about **26 units**. Each part is centred on x = 512 and normally spans the full ink width.
+- **C1. One body.** 6,286 glyphs have no channel that divides them. The whole form fills the frame of F2 and F3.
+- **C2. Side by side** (4,778 glyphs). The left component takes about **41%** of the ink width and the right about **55%** (middle half of the font: 37–46% and 49–58%), with a channel of about **25 units** between them (middle half 18–35). The radical side is the narrower one in four glyphs out of five. Three side-by-side parts divide roughly 34 / 27 / 29%.
+- **C3. Stacked** (1,220 glyphs in two parts, 165 in more). In a two-part stack the upper part is usually the smaller: it takes about **31%** of the height (middle half 27–46%), as a crown such as 艸, 宀 or 竹 does, and the two parts are separated by about **26 units**. Each part is centred on x = 512 and normally spans the full ink width.
 - **C4. Components fill their slot, not the frame.** In a side-by-side glyph the frame's top and bottom are each reached by at least one component, not necessarily both: only 7% of such glyphs have both sides at full height. A component that is short by nature (口, 日, 田) keeps a short height inside its slot and is not stretched to 768.
 - **C5. Enclosures.** An enclosing stroke takes the frame of F2 and F3 itself; the enclosed part is centred inside it with the clearance of S4 on every side.
 - **C6. No rescaling to fit.** A component is not squeezed or stretched by more than about 12% in one direction to make room. If the structure does not fit, the glyph moves to the wide class or its free strokes are re-spaced.
@@ -62,7 +62,7 @@ A character is one of five layouts. The checker finds side-by-side and stacked l
 
 ## Shared components
 
-- **R1. One drawing per radical and slot.** A radical that recurs in the same position at the same size is one template in `components/`, copied unchanged into each glyph: 180 templates serve 3,763 glyphs. Its shape, size and position are identical in every copy.
+- **R1. One drawing per radical and slot.** A radical that recurs in the same position at the same size is one template in `components/`, copied unchanged into each glyph: 181 templates serve 3,814 glyphs. Its shape, size and position are identical in every copy.
 - **R2. Fix the template, not the copy.** A fault inside a template is corrected in the template and synced to every glyph that uses it, after checking that every one of them shows the fault.
 - **R3. Free drawings follow the template.** Where a glyph draws the same radical without a template, it uses the template's construction and proportions.
 
@@ -82,7 +82,7 @@ The current audit of 11,328 glyphs:
 | F1, F2, F4 | No departures. All 11,277 body glyphs and 51 short forms are on their frames |
 | F3 | 2 glyphs are wider than 640: U+3DAFB (723) and U+3DAFF (751) |
 | S4, 0.5 units | No departures |
-| S4, 20 units | 3,450 glyphs have at least one gap under 20 units, which closes by Bold |
+| S4, 20 units | 3,327 glyphs have at least one gap under 20 units, which closes by Bold |
 
 The two F3 departures are recorded in the report as known exceptions. Both set three parts side by side (鳥 with a two-part phonetic); squeezing them to 640 would break rule C6 and close their gaps, so they wait for a redraw. `--check` passes while that list does not grow.
 

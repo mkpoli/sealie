@@ -1,6 +1,6 @@
 # Build Sealie from SVG sources
 
-`svg/` contains the complete 11,328-codepoint font source. Reusable radicals live in `components/`: **180 templates registered to 3,763 glyphs**. Sources already contain the geometric drawing, optical sizing and reviewed repairs; no private drawings, reference images or existing font outlines are needed to build them.
+`svg/` contains the complete 11,328-codepoint font source. Reusable radicals live in `components/`: **181 templates registered to 3,814 glyphs**. Sources already contain the geometric drawing, optical sizing and reviewed repairs; no private drawings, reference images or existing font outlines are needed to build them.
 
 Each `Uxxxxx.svg` uses a 1024-unit advance, a 30-unit round pen and exact centerline coordinates. Font software and sources use SIL Open Font License 1.1; see [LICENSE-OFL.txt](../LICENSE-OFL.txt) and [OFL-1.1.txt](../OFL-1.1.txt).
 
